@@ -1,0 +1,375 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 45 15% 89%; /* #E4E1D9 */
+    --foreground: 20 22% 18%; /* #3A2520 */
+
+    --card: 60 33% 95%; /* #F3F1E9 */
+    --card-foreground: 20 22% 18%; /* #3A2520 */
+
+    --popover: 60 33% 95%; /* #F3F1E9 */
+    --popover-foreground: 20 22% 18%; /* #3A2520 */
+
+    --primary: 20 22% 18%; /* #3A2520 */
+    --primary-foreground: 45 15% 89%; /* #E4E1D9 */
+
+    --secondary: 40 95% 63%; /* #FCB044 */
+    --secondary-foreground: 20 22% 18%; /* #3A2520 */
+
+    --muted: 40 50% 72%; /* #E3BB88 */
+    --muted-foreground: 20 22% 18%; /* #3A2520 */
+
+    --accent: 40 50% 72%; /* #E3BB88 */
+    --accent-foreground: 20 22% 18%; /* #3A2520 */
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 45 15% 89%; /* #E4E1D9 */
+
+    --border: 40 50% 72%; /* #E3BB88 */
+    --input: 40 50% 72%; /* #E3BB88 */
+    --ring: 20 22% 18%; /* #3A2520 */
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 20 22% 18%; /* #3A2520 */
+    --foreground: 45 15% 89%; /* #E4E1D9 */
+
+    --card: 20 22% 18%; /* #3A2520 */
+    --card-foreground: 45 15% 89%; /* #E4E1D9 */
+
+    --popover: 20 22% 18%; /* #3A2520 */
+    --popover-foreground: 45 15% 89%; /* #E4E1D9 */
+
+    --primary: 40 95% 63%; /* #FCB044 */
+    --primary-foreground: 20 22% 18%; /* #3A2520 */
+
+    --secondary: 40 50% 72%; /* #E3BB88 */
+    --secondary-foreground: 20 22% 18%; /* #3A2520 */
+
+    --muted: 40 50% 72%; /* #E3BB88 */
+    --muted-foreground: 20 22% 18%; /* #3A2520 */
+
+    --accent: 40 50% 72%; /* #E3BB88 */
+    --accent-foreground: 20 22% 18%; /* #3A2520 */
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 45 15% 89%; /* #E4E1D9 */
+
+    --border: 40 50% 72%; /* #E3BB88 */
+    --input: 40 50% 72%; /* #E3BB88 */
+    --ring: 40 95% 63%; /* #FCB044 */
+  }
+
+  /* Arabic font styling */
+  .font-cairo {
+    font-family: var(--font-cairo), sans-serif;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  /* Set default font based on language */
+  body[dir="rtl"] {
+    font-family: var(--font-cairo), sans-serif;
+  }
+
+  body[dir="ltr"] {
+    font-family: var(--font-inter), sans-serif;
+  }
+}
+
+/* Custom animation for news ticker */
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 20s linear infinite;
+}
+
+/* Yemen color theme - Updated */
+.bg-yemen-primary {
+  background-color: #3a2520;
+}
+
+.bg-yemen-background {
+  background-color: #e4e1d9;
+}
+
+.bg-yemen-button {
+  background-color: #fcb044;
+}
+
+.bg-yemen-accent {
+  background-color: #e3bb88;
+}
+
+.bg-yemen-light {
+  background-color: #f3f1e9;
+}
+
+.text-yemen-primary {
+  color: #3a2520;
+}
+
+.text-yemen-light {
+  color: #e4e1d9;
+}
+
+.text-yemen-button {
+  color: #fcb044;
+}
+
+.text-yemen-accent {
+  color: #e3bb88;
+}
+
+.border-yemen-primary {
+  border-color: #3a2520;
+}
+
+.border-yemen-accent {
+  border-color: #e3bb88;
+}
+
+.hover\:bg-yemen-primary:hover {
+  background-color: #3a2520;
+}
+
+.hover\:bg-yemen-button:hover {
+  background-color: #fcb044;
+}
+
+.hover\:bg-yemen-accent:hover {
+  background-color: #e3bb88;
+}
+
+/* Remove old Yemen colors */
+.bg-yemen-brown {
+  background-color: #3a2520;
+}
+
+.bg-yemen-brown-dark {
+  background-color: #3a2520;
+}
+
+.bg-yemen-brown-darker {
+  background-color: #3a2520;
+}
+
+.bg-yemen-orange {
+  background-color: #fcb044;
+}
+
+.text-yemen-brown {
+  color: #3a2520;
+}
+
+.text-yemen-orange {
+  color: #fcb044;
+}
+
+.border-yemen-brown {
+  border-color: #3a2520;
+}
+
+.hover\:bg-yemen-brown:hover {
+  background-color: #3a2520;
+}
+
+.hover\:bg-yemen-brown-dark:hover {
+  background-color: #3a2520;
+}
+
+/* RTL support for navigation menu */
+/* Remove this as we're handling it directly in the component */
+
+/* Language-specific font utilities */
+.font-arabic {
+  font-family: var(--font-cairo), sans-serif;
+}
+
+.font-latin {
+  font-family: var(--font-inter), sans-serif;
+}
+
+/* New Navigation Styling - Updated colors */
+.nav-item-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.nav-item-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.nav-item {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 1rem;
+  height: 4rem;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: hsl(var(--foreground));
+  transition: color 0.2s ease;
+  cursor: pointer;
+  background: none;
+  border: none;
+  white-space: nowrap;
+}
+
+.nav-item::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0.5rem;
+  right: 0.5rem;
+  height: 2px;
+  background-color: #fcb044;
+  transform: scaleX(0);
+  transition: transform 0.2s ease;
+}
+
+.nav-item:hover::after,
+.nav-item.active::after {
+  transform: scaleX(1);
+}
+
+.nav-dropdown {
+  position: absolute;
+  top: 100%;
+  min-width: 220px;
+  background-color: #f3f1e9;
+  border: 1px solid #e3bb88;
+  border-radius: 0.375rem;
+  box-shadow: 0 10px 15px -3px rgba(58, 37, 32, 0.1), 0 4px 6px -4px rgba(58, 37, 32, 0.1);
+  padding: 0.5rem 0;
+  z-index: 1000;
+  animation: fadeIn 0.2s ease;
+}
+
+.dropdown-ltr {
+  left: 0;
+}
+
+.dropdown-rtl {
+  right: 0;
+}
+
+.nav-dropdown-item {
+  display: block;
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  color: #3a2520;
+  transition: background-color 0.15s ease;
+  text-decoration: none;
+}
+
+.nav-dropdown-item:hover {
+  background-color: #e3bb88;
+  color: #3a2520;
+}
+
+/* RTL Navigation Layout */
+[dir="rtl"] .nav-item-container {
+  direction: rtl;
+}
+
+[dir="rtl"] .nav-dropdown {
+  text-align: right;
+}
+
+/* Mobile navigation */
+.mobile-nav-item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 0.75rem 0.5rem;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  text-align: left;
+  color: hsl(var(--foreground));
+  border-radius: 0.375rem;
+  transition: background-color 0.15s ease;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.mobile-nav-item:hover {
+  background-color: hsl(var(--accent));
+}
+
+.mobile-dropdown {
+  margin-top: 0.25rem;
+  margin-left: 1rem;
+  padding-left: 0.75rem;
+  border-left: 1px solid hsl(var(--border));
+  display: block;
+}
+
+[dir="rtl"] .mobile-dropdown {
+  margin-left: 0;
+  margin-right: 1rem;
+  padding-left: 0;
+  padding-right: 0.75rem;
+  border-left: none;
+  border-right: 1px solid hsl(var(--border));
+}
+
+.mobile-dropdown-item {
+  display: block;
+  padding: 0.625rem 0.5rem;
+  font-size: 0.875rem;
+  color: hsl(var(--foreground));
+  transition: color 0.15s ease;
+  text-decoration: none;
+}
+
+.mobile-dropdown-item:hover {
+  color: hsl(var(--primary));
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-0.5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    max-height: 0;
+  }
+  to {
+    opacity: 1;
+    max-height: 200px;
+  }
+}
